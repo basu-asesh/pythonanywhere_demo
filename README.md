@@ -7,11 +7,15 @@
 - Change the import to match your file:
 
 python
+
 import sys
+
 import os
 
 project_home = '/home/usab/mysite'
+
 if project_home not in sys.path:
+
     sys.path = [project_home] + sys.path
 
 from my_app import app as application   # ✅ use the actual filename!
