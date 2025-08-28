@@ -1,14 +1,17 @@
-from flask import Flask, render_template
+from flask import Flask
 
-app = Flask(__name__)
+from blueprints.core import core_bp
+from blueprints.auth import auth_bp
 
-@app.route("/")
-def home():
-    return "Hello from Flask on pythonanywhere!"
+def create_app():
+    app = Flask(__name__)
+    app.register_blueprint(core_bp)
+    app.register_blueprint(auth_bp, url_prefix="/auth")
+    return app
 
-@app.route("/1")
-def f1():
-    return render_template("1.html")
+app = create_app()
+
+
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

@@ -1,6 +1,5 @@
 - Log in: https://www.pythonanywhere.com
 - git clone https://github.com/basu-asesh/pythonanywhere_demo.git
-- mv pythonanywhere_demo mysite
 
 ## OPTIONAL
 - Update WSGI config
